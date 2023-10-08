@@ -16,3 +16,19 @@ Git is a version control system that allows you to keep track of changes made in
 * While inside the folder/directory, we use the git init command to initialize our repository.
 
 ![git 1](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/5fda4adb-2a44-4e7f-b841-fb5593095bb7)
+
+## Making The First Commit
+In the picture above, we successfully created our working directory and initialized a git repository. Now we will make our first commit. In git, commit simply means saving the changes (adding, modifying or deleting files or text) you made to your files. When we make a commit, git takes a snapshot of the current state of our repository and saves a copy in the .git folder inside our working directory.
+
+Now, let's make our first commit by following the below steps;
+
+* Inside our working directory, we create a new file called index.txt using this command touch index.txt.
+
+* After creating, input any text in the text file.
+
+* Then we add the changes to git staging area using this command git add .
+
+* To commit the changes to git, we use this command git commit -m "Initial commit". The -m option/flag is used to add a commit message. The commit message provides context about the commit.
+
+![git 2](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/b36022e6-d55b-4b79-b040-efba00a92bca)
+
