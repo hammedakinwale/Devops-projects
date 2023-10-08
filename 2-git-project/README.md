@@ -96,3 +96,70 @@ The steps for creating a github account are listed below;
 see gitbub dashboard below
 
 ![git dash](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/56a8e177-5b1c-4d26-b232-5d6ae49990db)
+
+## PUSHING LOCAL GIT REPOSITORY TO REMOTE GITHUB REPOSITORY
+
+After commiting changes you must push your changes to the remote repository with the command below:
+
+`git remote add origin [link-to-github-repo]`
+
+see example image below.
+
+![git  8](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/d3157c90-a3d8-43e0-8f5a-7b71ec72205a)
+
+## CLONING REMOTE GIT REPOSITORY
+
+To clone a git repository we use the command below:
+
+`git clone [link-to-remote-repository]`
+
+![git 9](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/5da992f5-7299-483d-bdbb-8daafac020ba)
+
+## BRANCH MANAGEMENT AND TAGGING
+
+Markdown syntax is commonly used for creating document, README files, forum posts and even web pages.
+
+1. Heading: To create headings, we use the hash (#) symbol, e.g.
+
++ # Heading 1
+  
++ ## Heading 2
+
++ ### Heading 3
+
+2. Emphasis: To create emphasis, the asterisks (*) or underscore (_) is used e.g.
++ *Italicized Text* or _Italicized Text_
+
++ **Bold Text**
+
+3. Lists: To create an unordered list, we use the hyphen (-) symbol e.g.
+
+unordered list
+
++ -Unordered list 1
+
++ -Unordered List 2
+
++ -Unordered list 3
+
+ordered list
+
++ 1. Ordered list 1
+
++ 2. Ordered list 2
+
++ 3. Ordered list 3
+ 
+4. Links: To create hyperlinks, we use square brackets ([]) for the link text, followed by the paranthesis () containing the URL e.g.
+
+`[visit darey.io](https://www.darey.io)`
+
+5. Images: To display an image, use an exclamation mark (!) followed by a square bracket ([]) for the alt text and the paranthesis for the image URL e.g.
+
+`![git 9](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/5da992f5-7299-483d-bdbb-8daafac020ba)`
+
+6. Code: To display codes or snippets, we use backicks (``) to enclose the code e.g.
+
+`console.log('Welcome to darey.io')`
+
+console.log('Welcome to darey.io')
