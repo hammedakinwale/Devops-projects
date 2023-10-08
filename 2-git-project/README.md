@@ -36,17 +36,30 @@ Now, let's make our first commit by following the below steps;
 ### working with branches
 Git branches are a powerful tool that can help you to manage your development workflow more effectively. By using branches, you can experiment with new features, fix bugs, and collaborate with other developers without affecting the main codebase.
 ### Make your first branch
-* to make new branch use `git checkout -b [branch name]`.
+* to make new branch run the command below:
+
+`git checkout -b [branch name]`.
 * The `-b flag` helps to create and change directly into the new branch.
 
 ![git 3](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/a4812ace-5074-4813-88fa-852dda253be5)
 
 ## Listing Branches
-to show the list of the branches in the repository run this command `git branch`
+to show the list of the branches in the repository run the command below:
+
+`git branch`
 
 ![git 4](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/c49ab731-4f46-4e35-9cda-9bae2b508147)
 
 ## CHANGING INTO AN OLD BRANCH
-to change into an existing branch type git checkout [branch name]
+to change into an existing branch run the command below:
+
+`git checkout:[branch name]`
 
 ![git 5](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/356c058f-3342-4840-a554-b1a47d932a74)
+
+## MERGING A BRANCH INTO ANOTHER BRANCH
+in a case where we have two branches A and B and we want to add the contents of B to A first we will have to change to branch A and run the command below:
+
+`git merge B`
+
+![git 6](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/fdc51710-dc4d-4aba-8125-f39f5b0f7cf7)
