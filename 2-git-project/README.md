@@ -11,7 +11,7 @@ Git is a version control system that allows you to keep track of changes made in
 
 * We open the terminal and create a working folder or directory e.g DevOps folder using this command mkdir DevOps.
 
-* After creating the folder or directory, we'll have to change or move into the working directory using this command cd DevOps.
+* After creating the folder or directory, we'll have to change or move into the working directory using this command `cd DevOps.`
 
 * While inside the folder/directory, we use the git init command to initialize our repository.
 
@@ -26,7 +26,7 @@ Now, let's make our first commit by following the below steps;
 
 * After creating, input any text in the text file.
 
-* Then we add the changes to git staging area using this command git add .
+* Then we add the changes to git staging area using this command `git add`.
 
 * To commit the changes to git, we use this command git commit -m "Initial commit". The -m option/flag is used to add a commit message. The commit message provides context about the commit.
 
@@ -36,8 +36,10 @@ Now, let's make our first commit by following the below steps;
 ### working with branches
 Git branches are a powerful tool that can help you to manage your development workflow more effectively. By using branches, you can experiment with new features, fix bugs, and collaborate with other developers without affecting the main codebase.
 ### Make your first branch
-* to make new branch use git checkout -b [branch name]
-* The -b flag helps to create and change directly into the new branch.
+* to make new branch use `git checkout -b [branch name]`.
+* The `-b flag` helps to create and change directly into the new branch.
 
 ![git 3](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/a4812ace-5074-4813-88fa-852dda253be5)
 
+## Listing Branches
+to show the list of the branches in the repository run this command `git branch`
