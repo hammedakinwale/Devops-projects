@@ -72,3 +72,27 @@ git branch is deleted by running the below command:
 `git branch -d [branch_name]`
 
 ![git 7](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/bf5aecf4-86a5-42e8-bc8b-08f098425d88)
+
+## COLLABORATION AND REMOTE REPOSITORIES
+
+### CREATING A GITHUB ACCOUNT
+
+The steps for creating a github account are listed below;
+
++ Head over to github.com to create a Github account.
+
++ Then you enter your username, password and email.
+
++ Next you verify your identity.
+
++ Then click on the create button to create your Github account.
+
++ Input activation code sent to the email you provided.
+
++ Select your preferences and click continue.
+
++ Lastly, you click "continue for free" for the free tier.
+
+see gitbub dashboard below
+
+![git dash](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/56a8e177-5b1c-4d26-b232-5d6ae49990db)
