@@ -63,3 +63,12 @@ in a case where we have two branches A and B and we want to add the contents of 
 `git merge B`
 
 ![git 6](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/fdc51710-dc4d-4aba-8125-f39f5b0f7cf7)
+
+## DELETING A GIT BRANCH
+when new features are added to application it is mostly done in a cloned branch. and this branch is usually deleted once the new features are tested and merged to main branche.
+
+git branch is deleted by running the below command:
+
+`git branch -d [branch_name]`
+
+![git 7](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/bf5aecf4-86a5-42e8-bc8b-08f098425d88)
