@@ -38,5 +38,6 @@ Git branches are a powerful tool that can help you to manage your development wo
 ### Make your first branch
 * to make new branch use git checkout -b [branch name]
 * The -b flag helps to create and change directly into the new branch.
+
 ![git 3](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/a4812ace-5074-4813-88fa-852dda253be5)
 
