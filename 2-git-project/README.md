@@ -32,3 +32,11 @@ Now, let's make our first commit by following the below steps;
 
 ![git 2](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/b36022e6-d55b-4b79-b040-efba00a92bca)
 
+## WORKING WITH BRANCHES
+### working with branches
+Git branches are a powerful tool that can help you to manage your development workflow more effectively. By using branches, you can experiment with new features, fix bugs, and collaborate with other developers without affecting the main codebase.
+### Make your first branch
+* to make new branch use git checkout -b [branch name]
+* The -b flag helps to create and change directly into the new branch.
+![git 3](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/a4812ace-5074-4813-88fa-852dda253be5)
+
