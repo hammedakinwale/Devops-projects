@@ -45,3 +45,8 @@ Git branches are a powerful tool that can help you to manage your development wo
 to show the list of the branches in the repository run this command `git branch`
 
 ![git 4](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/c49ab731-4f46-4e35-9cda-9bae2b508147)
+
+## CHANGING INTO AN OLD BRANCH
+to change into an existing branch type git checkout [branch name]
+
+![git 5](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/356c058f-3342-4840-a554-b1a47d932a74)
