@@ -15,3 +15,4 @@ Git is a version control system that allows you to keep track of changes made in
 
 * While inside the folder/directory, we use the git init command to initialize our repository.
 
+![git 1](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/5fda4adb-2a44-4e7f-b841-fb5593095bb7)
