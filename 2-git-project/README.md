@@ -121,34 +121,34 @@ Markdown syntax is commonly used for creating document, README files, forum post
 
 1. Heading: To create headings, we use the hash (#) symbol, e.g.
 
-+ # Heading 1
++ `# Heading 1`
   
 + ## Heading 2
 
-+ ### Heading 3
++ `### Heading 3`
 
 2. Emphasis: To create emphasis, the asterisks (*) or underscore (_) is used e.g.
-+ *Italicized Text* or _Italicized Text_
++ `*Italicized Text* or _Italicized Text_`
 
-+ **Bold Text**
++ `**Bold Text**`
 
 3. Lists: To create an unordered list, we use the hyphen (-) symbol e.g.
 
 unordered list
 
-+ -Unordered list 1
++ `-Unordered list 1`
 
-+ -Unordered List 2
++ `-Unordered List 2`
 
-+ -Unordered list 3
++ `-Unordered list 3`
 
 ordered list
 
-+ 1. Ordered list 1
++ `1. Ordered list 1`
 
-+ 2. Ordered list 2
++ `2. Ordered list 2`
 
-+ 3. Ordered list 3
++ `3. Ordered list 3`
  
 4. Links: To create hyperlinks, we use square brackets ([]) for the link text, followed by the paranthesis () containing the URL e.g.
 
@@ -161,5 +161,3 @@ ordered list
 6. Code: To display codes or snippets, we use backicks (``) to enclose the code e.g.
 
 `console.log('Welcome to darey.io')`
-
-console.log('Welcome to darey.io')
