@@ -11,7 +11,7 @@ Git is a version control system that allows you to keep track of changes made in
 
 * We open the terminal and create a working folder or directory e.g DevOps folder using this command mkdir DevOps.
 
-* After creating the folder or directory, we'll have to change or move into the working directory using this command `cd DevOps.`
+* After creating the folder or directory, we'll have to change or move into the working directory using this command `cd DevOps`.
 
 * While inside the folder/directory, we use the git init command to initialize our repository.
 
@@ -43,3 +43,5 @@ Git branches are a powerful tool that can help you to manage your development wo
 
 ## Listing Branches
 to show the list of the branches in the repository run this command `git branch`
+
+![git 4](https://github.com/hammedakinwale/Darey.io-Linux-Project/assets/78992096/c49ab731-4f46-4e35-9cda-9bae2b508147)
