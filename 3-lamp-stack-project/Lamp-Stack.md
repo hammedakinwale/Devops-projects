@@ -16,13 +16,9 @@ Update list of packages in package manager.
 
 when promped type Y to confirm update
 
-### first
+![first](./images/apt-up.png)
 
-![Updatelist](./images/apt-up.png)
-
-### second
-
-![updatelist](./images/apt-up-2.png)
+![second](./images/apt-up-2.png)
 
 Run Apache2 package installation.
 
