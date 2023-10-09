@@ -18,11 +18,11 @@ when promped type Y to confirm update
 
 ### first
 
-![alt text](./images/apt-up.png)
+![Updatelist](./images/apt-up.png)
 
 ### second
 
-![alt text](./images/apt-up-2.png)
+![updatelist](./images/apt-up-2.png)
 
 Run Apache2 package installation.
 
@@ -30,13 +30,13 @@ Run Apache2 package installation.
 
 when promted pess Y to confirm installation.
 
-![alt text](./images/apt-down.png)
+![apache installation](./images/apt-down.png)
 
 After running the above processes, we need to verify that apache2 is running as a service in our OS. To do that we use this command below:
 
 `sudo systemctl status apache2`
 
-![alt text](./images/status.png)
+![status](./images/status.png)
 
 before we can recieve any traffic by our server, we need to open TCP port 80 the default port web browsers use to access web pages on the internet.
 
@@ -47,19 +47,19 @@ as Our server is running and we can access it locally and from the internet. Now
 `curl http://localhost:80` or `curl http://127.0.0.1:80`
 
 
-![alt text](./images/port-up.png)
+![server](./images/port-up.png)
 
 Now, it's time to test how our Apache HTTP server can respond to requests from the internet, to do so we go to any browser and use the URL below;
 
 `http://<Public-IP-Address>:80`
 
-![alt text](./images/public.png)
+![HTTP configuration](./images/public.png)
 
 another way To get the ip address other than checking it on our AWS Web console, we use the command below:
 
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
-![alt text](./images/another.png)
+![aws console](./images/another.png)
 
 ## STEP 2 - INSTALLING MySQL [DATABASE MANAGEMENT SYSTEM]
 
@@ -69,44 +69,44 @@ We will install MySQL using using Ubuntu's package manager.
 
 when prompted confirm installation by typing Y and enter.
 
-![alt text](./images/SQL.png)
+![mysql installtion](./images/SQL.png)
 
 After installation, we log in to the MySQL console by typing command below:
 
 `sudo mysql`
 
-![alt text](./images/SQL-LOG.png)
+![running mysql](./images/SQL-LOG.png)
 
 It is also recommended to run a security script that comes pre-installed with the MySQL. Before running the script, we have to set a password for the root user, using mysql_native_password as default authentication method. To do that the command below is used;
 
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
 
-![alt text](./images/SQL-PASS.png)
+![password](./images/SQL-PASS.png)
 
 An exit with `exit`
 
 
-![alt text](./images/EXIT.png)
+![exit](./images/EXIT.png)
 
 After running the security script, we'll have to start the interactive script by running the command below:
 
 `sudo mysql_secure_installation`
 
-![alt text](./images/PASS.png)
+![mysql](./images/PASS.png)
 
 When finished with the script process, we have to test if we're able to log in to the MySQL console by typing the command below:
 
 `sudo mysql -p`
 
-![alt text](./images/LOGIN.png)
+![testing mysql](./images/LOGIN.png)
 
 Then we exit the console the command below:
 
 `exit`
 
 
-![alt text](./images/EXIT-2.png)
+![exiting](./images/EXIT-2.png)
 
 ## STEP 3 - INSTALLING PHP.
 
@@ -114,13 +114,13 @@ To install php and other packages together use the command below:
 
 `sudo apt install php libapache2-mod-php php-mysql`
 
-![alt text](./images/PHP.png)
+![php installtion](./images/PHP.png)
 
 Once the installation is finished, we have to check the PHP version by using the command below:
 
 `php -v`
 
-![alt text](./images/PHP-VER.png)
+![php version](./images/PHP-VER.png)
 
 ## STEP 4 - CREATING A VIRTUAL HOST FOR THE WEBSITE USING APACHE
 
@@ -130,19 +130,19 @@ We'll set up a domain called projectlamp using the command below:
 
 `sudo mkdir /var/www/projectlamp`
 
-![alt text](./images/apache.png)
+![projectlamp](./images/apache.png)
 
 Next we assign ownership of the directory user using the command below:
 
 `sudo chown -R $USER:$USER /var/www/projectlamp`
 
-![alt text](./images/apache-2.png)
+![change owner](./images/apache-2.png)
 
 Next we will assign ownership of the directory user using the command below;
 
 `sudo chown -R $USER:$USER /var/www/projectlamp`
 
-![alt text](./images/CHOWN.png)
+![change owner](./images/CHOWN.png)
 
 Then we create and open a new configuration file in Apache's site-available directory using the command below:
 
@@ -166,39 +166,39 @@ ErrorLog ${APACHE_LOG_DIR}/error.log
 CustomLog ${APACHE_LOG_DIR}/access.log combined
 ```
 
-![alt text](./images/CHOWN.png)
+![change owner](./images/CHOWN.png)
 
 Then we use the ls command to show the new file in the present directory:
 
 `sudo ls /etc/apache2/sites-available`
 
-![alt text](./images/LS.png)
+![apache](./images/LS.png)
 
 Now, we enable the new virtual host using the command below:
 
 `sudo a2ensite projectlamp`
 
-![alt text](./images/Allow.png)
+![anabling virtual host](./images/Allow.png)
 
 Next we  disable apache's default website using the command below:
 
 `sudo a2dissite 000-default`
 
 
-![alt text](./images/DIS.png)
+![apche default](./images/DIS.png)
 
 in order to make sure our configuration file doesn't contain syntax errors, we use the command below:
 
 `sudo apache2ctl configtest`
 
 
-![alt text](./images/ERROR.png)
+![config](./images/ERROR.png)
 
 Finally, we will have to reload apache so the changes can take effect using the command below:
 
 `sudo systemctl reload apache2`
 
-![Alt text](./images/RERUN.png)
+![reloading apache](./images/RERUN.png)
 
 After that, we go to our browser to confirm if the website is now active.
 
@@ -211,16 +211,16 @@ To do this we have to change the default behaviour by editing the dir.conf file 
 `sudo vim /etc/apache2/mods-enabled/dir.conf`
 
 from this 
-![Alt text](./images/1.png)
+![changing default behaviour](./images/1.png)
 
 to this
-![Alt text](./images/2.png)
+![last result](./images/2.png)
 
 After saving and closing the file, we'll have to reload apache so the changes can take effect by using the command below:
 
 `sudo systemctl reload apache2`
 
-![Alt text](./images/DIFF.png)
+![reloading apache](./images/DIFF.png)
 
 lastly we will create a php script to test that it is correctly installed and configured on our server using the command below:
 
@@ -234,10 +234,10 @@ phpinfo();**
 
 When done with everything we go the browser to refresh the page and a page similar to this will be displayed:
 
-![Alt text](./images/PHP-2.png)
+![new webpage](./images/PHP-2.png)
 
 Lastly after we have checked the relevant informations, it is best to remove the file created cause it contains sensitive information about our PHP environment and Ubuntu server. To do so, we use the below command:
 
 `sudo rm /var/www/projectlamp/index.php`
 
-![Alt text](./images/LAST.png)
+![deleting information](./images/LAST.png)
