@@ -332,3 +332,9 @@ echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
 **STEP 3:** Set execute permission on the file using `sudo chmod +x backup.sh`.
 
 ![it should like this](./images/la.png)
+
+**STEP 4:** Run the the script with the command below:
+
+`./backup.sh`
+
+![it should like this](./images/back.png)
