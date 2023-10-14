@@ -70,13 +70,13 @@ log in with the command belwo:
 
 ![it should look like this](./images/log.png)
 
-paste this `DATAS USER 'Clientes_user'@'private-Ip' IDENTIFIED BY 'PassWord.2';
+paste this `DATAS USER 'Datas_user'@'private-Ip' IDENTIFIED BY 'PassWord.2';
 ` in mysql console and run.
 
 
 ![it should look like this](./images/jh.png)
 
-then grant permision to `Cliente-user` with the below command.
+then grant permision to `Data-user` with the below command.
 
 `GRANT ALL ON Datas_database.* TO 'Clientes_user'@'private-Ip';
 FLUSH PRIVILEGES;`
