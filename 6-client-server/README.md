@@ -35,13 +35,20 @@ Connect to the `mysql-client`
 
 ![it should look like this](./images/cl.png)
 
-And Install MySQL software with the command below:
++ And Install MySQL software with the command below:
 
 `sudo apt install mysql-server`
+
+**enable mysql service with `sudo systemctl enable mysql`**
+
+![it should look like this](./images/en.png)
 
 + install Mysql for the client server with `sudo apt install mysql-client`
 
 ![it should look like this](./images/lqs.png)
+
+
+**enable mysql service with `sudo systemctl enable mysql`**
 
 **4.** By default both EC2 virtual servers are located in the same local virtual network. for to be able tocommunicate with each other using the local **IP ADRRESS** 
 
@@ -52,9 +59,17 @@ Change the inbound rule to TCP to port 3306 and connect to Clients **Private Ip 
 
 ![it should look like this](./images/da.png)
 
-**5.** To connect Client to Server We need to configure MySQL-Server to allow connection from remote host with the command below.
+**5.** To connect Client to Server We  need to first of all run the mysql security script `sudo mysql_secure-installation` and configure MySQL-Server to allow connection from remote host with the command below on server console.
 
-` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ` and change the value of nind-address to `0.0.0.0`
+` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ` and change the value of nind-address to `0.0.0.0` to enable connection from any ip adress.
+
+![it should look like this](./images/root.png)
+
+then restart mysql with `sudo systemctl restart mysql`
+
+![it should look like this](./images/res.png)
+
+## **AND**
 
 ![it should look like this](./images/conf.png)
 
@@ -70,19 +85,35 @@ log in with the command belwo:
 
 ![it should look like this](./images/log.png)
 
-paste this `DATAS USER 'Datas_user'@'private-Ip' IDENTIFIED BY 'PassWord.2';
+we will create user with  `CREATE USER 'Data_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.2';
 ` in mysql console and run.
 
 
 ![it should look like this](./images/jh.png)
 
+next we will create data base with `CREATE DATABASE test_db;`.
+
+![it should look like this](./images/test.png)
+
 then grant permision to `Data-user` with the below command.
 
-`GRANT ALL ON Datas_database.* TO 'Clientes_user'@'private-Ip';
-FLUSH PRIVILEGES;`
-
+`GRANT ALL ON test_db.* TO 'Data_user'@'%' WITH GRANT OPTION;`
 
 ![it should look like this](./images/cli.png)
 
-**7.** Then From the client server run `mysql -u Datas_user -p -h <private-ip-address> `using the private Ip of the *Server
+## **AND**
+`FLUSH PRIVILEGES;`
 
+![it should look like this](./images/flush.png)
+
+**7.** Then From the client server run `mysql -u Data_user -h ,private ip address> -p`.
+
+![it should look like this](./images/connected.png)
+
+**8.** we will check if we have successfully connected to the server with command below.
+
+`show databases;`
+
+![it should look like this in client](./images/show.png)
+
+![it should look like this on the server](./images/show.png)
