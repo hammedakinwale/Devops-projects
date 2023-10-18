@@ -72,6 +72,7 @@ To do this we need first of all connect to the servers via ssh to be able to run
 Copy the shh client and cd into download in your Terminal then paste the ssh client and hit enter
 
 ![Loadbalancer1](./images/14.png)
+
 ![Loadbalancer2](./images/15.png)
 
 To install Apache server Run `sudo apt update -y`, `sudo apt upgrade -y` and `sudo apt install apache2`
@@ -82,6 +83,7 @@ To install Apache server Run `sudo apt update -y`, `sudo apt upgrade -y` and `su
 + To verify if Apache is running on the system we will run `sudo systemctl status apache2`
 
 ![Loadbalancer1](./images/18.png)
+
 ![Loadbalancer2](./images/19.png)
 
 **STEP 4** Configuring Apache webservers to serve content on port 8000 instead of the default port which is port 80. Then we will create new index.html file. The file contain code to display the public Ip address of the Ec2 instances . We will then override apache webserver default html file with the new file
@@ -97,6 +99,7 @@ we will Run `sudo vi /etc/apache2/ports.conf ` and use text editor to open /etc/
 + To open the file /etc/apache2/sites-available/000-default.conf and change port;80 on the virtual host to port; 8000. we will run `sudo vi /etc/apache2/sites-available/000-default.conf`
 
 ![Loadbalancer1](./images/22.png)
+
 ![Loadbalancer2](./images/23.png)
 
 + to load the new configurations we will restart apache with the command below:
@@ -104,6 +107,7 @@ we will Run `sudo vi /etc/apache2/ports.conf ` and use text editor to open /etc/
 `sudo systemctl restart apache2`
 
 ![Loadbalancer1](./images/24.png)
+
 ![Loadbalancer2](./images/25.png)
 
 + To open a new index.html file
@@ -126,11 +130,13 @@ we will Run `sudo vi /etc/apache2/ports.conf ` and use text editor to open /etc/
 ```
 
 ![Loadbalancer1](./images/26.png)
+
 ![Loadbalancer2](./images/27.png)
 
 Change the file ownership of index.html with `sudo chown www-data:www-data ./index.html`
 
 ![Loadbalancer1](./images/29.png)
+
 ![Loadbalancer2](./images/30.png)
 
 **Overriding the default HTML file of the apache webserver**
@@ -138,6 +144,7 @@ Change the file ownership of index.html with `sudo chown www-data:www-data ./ind
 + we will replace the default html file with our new html with `sudo cp -f ./index.html /var/www/html/index.html`
 
 ![Loadbalancer1](./images/31.png)
+
 ![Loadbalancer2](./images/32.png)
 
 + to load the new configurations we will restart apache with the command below:
@@ -145,6 +152,7 @@ Change the file ownership of index.html with `sudo chown www-data:www-data ./ind
 `sudo systemctl restart apache2`
 
 ![Loadbalancer1](./images/33.png)
+
 ![Loadbalancer2](./images/34.png)
 
 **STEP 5.** CONFIGURING NGINX AS LOAD BALANCER Prerequisite:
