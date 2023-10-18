@@ -18,13 +18,13 @@ we will provision two `EC2 instances` running on `ubuntu 22.04`, and also instal
 
 + Open Aws management Console and click on EC2 instances to launch
 
-	![it should look like this](./images/1.png)
+	![it should look like this](./images/hy.png)
 
 + Under name provide a unique name for each of your Webserver. In this case `Loadbalancer1` and `Loadbalancer2`
 
-![it should look like this](./images/2.png)
+![it should look like this](./images/yh.png)
 
-![it should look like this](./images/3.png)
+![it should look like this](./images/tr.png)
 
 + Under Application and Os images,click on quick start and Ubuntu 22.4
 
