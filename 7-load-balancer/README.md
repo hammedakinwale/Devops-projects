@@ -18,7 +18,7 @@ we will provision two `EC2 instances` running on `ubuntu 22.04`, and also instal
 
 + Open Aws management Console and click on EC2 instances to launch
 
-	![it should look like this](./images/hy.png)
+![it should look like this](./images/hy.png)
 
 + Under name provide a unique name for each of your Webserver. In this case `Loadbalancer1` and `Loadbalancer2`
 
