@@ -44,7 +44,21 @@ In this project we be will implementing a solution that consists of following co
 
 ![The view](./images/6.png)
 
-+ Instead of formating the disks as ext4 we will to format them as `xfs`
++ create a phisical volume used by lvm with `pvcreate` and also check for the physical volume with `sudo pvs`
+
+![The view](./images/33.png)
+
++ create volume group with `vgcreate` (puting all physical volume in one volume group) and also check for volume group with `sudo vgs`
+
+![The view](./images/34.png)
+
++ create three logical volumes `lv-opt`, `lv-apps` and  `lv-logs` `sudo lvs` to view logical volumes
+
++ view the entire setup with `sudo vgdisplay -v #view complete setup - VG, PV, and LV`
+
+![The view](./images/35.png)
+
++ Instead of formating the disks as ext4 we will format them as `xfs`
 
 ```
 sudo mkfs -t xfs /dev/webdata-vg/lv-apps
@@ -65,12 +79,14 @@ sudo mkfs -t xfs /dev/webdata-vg/lv-opt
 by using the commands below:
 
 ```
+# create the mount directory first 
 sudo mkdir /mnt/apps
 
 sudo mkdir /mnt/logs
 
 sudo mkdir /mnt/opt
 
+# then mount
 sudo mount /dev/webdata-vg/lv-apps /mnt/apps
 
 sudo mount /dev/webdata-vg/lv-logs /mnt/logs
@@ -102,6 +118,7 @@ sudo systemctl enable nfs-server.service
 
 sudo systemctl status nfs-server.service
 ```
+![The view](./images/36.png)
 
 5. Export the mounts for webservers subnet cidr to connect as clients. For simplicity, you will install your all three Web Servers inside the same subnet, but in production set up you would probably want to separate each tier inside its own subnet for higher level of security. To check your subnet cidr – open your EC2 details in AWS web console and locate ‘Networking’ tab and open a Subnet link:
 
@@ -109,7 +126,8 @@ sudo systemctl status nfs-server.service
 
 + we will set up permissions that will allow our Web servers read, write and execute files on NFS:
 
-```sudo chown -R nobody: /mnt/apps
+```
+sudo chown -R nobody: /mnt/apps
 
 sudo chown -R nobody: /mnt/logs
 
@@ -121,9 +139,10 @@ sudo chmod -R 777 /mnt/logs
 
 sudo chmod -R 777 /mnt/opt
 
-sudo systemctl restart nfs-server.service```
+sudo systemctl restart nfs-server.service
+```
 
-+ Configure access to NFS for clients within the same subnet (example of Subnet CIDR – `172.31.32.0/20`):
++ Configure access to NFS for clients within the same subnet:
 
 ```sudo vi /etc/exports
 
@@ -140,7 +159,7 @@ sudo exportfs -arv
 
 6. Check which port is used by NFS and open it using Security Groups (add new Inbound Rule) rpcinfo -p | grep nfs
 
-**NOTE**: In order for NFS server to be accessible from your client, you must also open following ports: **TCP 111**, **UDP 111**, **UDP 2049**
+**NOTE**: In order for NFS server to be accessible from your client, you must also open following ports: **TCP 111**, **UDP 111**, **TCP 2049**, **UDP 2049**
 
 `rpcinfo -p | grep nfs
 `
@@ -153,21 +172,24 @@ sudo exportfs -arv
 
 **STEP2.** CONFIGURE THE DATABASE SERVER
 
-1. Install MySQL server with `sudo yum install mysql-server`
+1. Install MySQL server with `sudo apt install mysql-server -y`
 
 to verify that system is up and running we reboot and enable with:
 
 ```
-sudo systemctl start mysqld
-sudo systemctl enable mysqld
+sudo systemctl start mysql
+sudo systemctl enable mysql
 ```
+![The view](./images/37.png)
 
-+ check the status with `sudo systemctl status mysqld`
++ check the status with `sudo systemctl status mysql`
+
+![The view](./images/38.png)
 
 2. Create a database and name it `tooling`
 
 ```
-sudo mysql -u root -p
+sudo mysql
 create database tooling;
 ```
 
@@ -184,7 +206,7 @@ create database tooling;
 
 **STEP3.** PREPARE THE WEB SERVERS
 
-+ During the next steps we will do following:
+During the next steps we will do following:
 
 + Configure NFS client (this step must be done on all three servers)
 
@@ -286,6 +308,8 @@ sudo systemctl status httpd
 
 10. Update the website’s configuration to connect to the database `(in /var/www/html/functions.php file)`. Apply tooling-db.sql script to your database using this command `mysql -h <database-private-ip> -u <db-username> -p <db-password> < tooling-db.sql`
 ![The view](./images/23.png)
+
+![The view](./images/39.png)
 
 11. create a new admin user with username `myuser` and password `password` and connect to it from web-server
 
