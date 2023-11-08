@@ -220,4 +220,4 @@ Now run the playbook against your `uat` inventory and see what happens:
 
 `ansible-playbook -i /home/ubuntu/ansible-config-mgt/inventory/uat.yml /home/ubuntu/ansible-config-mgt/playbooks/site.yaml`
 
-![the architect](./images/13.png)
+![the final architect](./images/13.png)
