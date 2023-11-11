@@ -230,4 +230,5 @@ ansible-playbook -i /inventory/uat.yml playbooks/site.yaml
 ![15](https://github.com/hammedakinwale/ansible-config-mgt/assets/78992096/803b8457-f7d8-4842-a7ef-c95bbb96f05b)
 
 the final archetecture
+
 ![13](https://github.com/hammedakinwale/ansible-config-mgt/assets/78992096/c7395d42-1b03-4048-86e7-a2f3e27db956)
