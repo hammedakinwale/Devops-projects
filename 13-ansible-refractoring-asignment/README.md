@@ -218,6 +218,15 @@ Commit your changes, create a Pull Request and `merge` then to master branch, ma
 
 Now run the playbook against your `uat` inventory and see what happens:
 
-`ansible-playbook -i /home/ubuntu/ansible-config-mgt/inventory/uat.yml /home/ubuntu/ansible-config-mgt/playbooks/site.yaml`
+```
+cd /home/ubuntu/ansible-config-mgt
+
+ansible-playbook -i /inventory/uat.yml playbooks/site.yaml
+```
+![it should look like this](./images/14.png)
+
++ then load the servers public ip adress on any server as <public-ip-address>/index.html
+
+![it should look like this](./images/15.png)
 
 ![the final architecture](./images/13.png)
