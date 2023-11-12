@@ -223,10 +223,12 @@ cd /home/ubuntu/ansible-config-mgt
 
 ansible-playbook -i /inventory/uat.yml playbooks/site.yaml
 ```
-![it should look like this](./images/14.png)
+![14](https://github.com/hammedakinwale/ansible-config-mgt/assets/78992096/55e33f16-88a4-4e64-9e87-2665a12dc810)
 
 + then load the servers public ip adress on any server as <public-ip-address>/index.html
 
-![it should look like this](./images/15.png)
+![15](https://github.com/hammedakinwale/ansible-config-mgt/assets/78992096/803b8457-f7d8-4842-a7ef-c95bbb96f05b)
 
-![the final architecture](./images/13.png)
+the final archetecture
+
+![13](https://github.com/hammedakinwale/ansible-config-mgt/assets/78992096/c7395d42-1b03-4048-86e7-a2f3e27db956)
