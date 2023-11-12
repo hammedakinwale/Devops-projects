@@ -176,4 +176,7 @@ Run Playbook using:
 
 `ansible-playbook -i inventory/uat.yml playbooks/site.yml`
 
-# GREAT 
+![the result](./images/4.png)
+![the result](./images/5.png)
+
+# GREAT
