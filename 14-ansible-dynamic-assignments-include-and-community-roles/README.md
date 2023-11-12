@@ -52,8 +52,8 @@ Your layout should now look like this.
     └── webservers.yml
 ```
 
-![the result](./images/1.png)
-![the result](./images/2.png)
+![1](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/c2502a88-71a0-4d7e-a8d1-ba1595c0cac3)
+![2](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/513651c2-fbf7-489c-8fc1-606a8637fb75)
 
 + Now paste the instruction below into the `env-vars.yml` file.
 
@@ -120,7 +120,7 @@ Inside `roles` directory create your new MySQL role with `ansible-galaxy install
 
 `mv geerlingguy.apache/ apacheRole`
 
-![the result](./images/3.png)
+![3](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/b47438b5-ae5a-4f5d-b7b1-050ff3a0e25b)
 
 # LOAD BALANCER ROLES
 
