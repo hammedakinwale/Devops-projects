@@ -522,7 +522,7 @@ enable_classiclink_dns_support = "false"
 preferred_number_of_public_subnets = 2
 ```
 
-the folders structures should look like this
+the folder structure should look like this
 
 ```
 └── PBL
@@ -534,6 +534,7 @@ the folders structures should look like this
 ```
 
 + Run `terraform plan` to make sure everything work perfectly
-
+![the solution](./images/14.png)
 ![the solution](./images/12.png)
+![the solution](./images/15.png)
 ![the solution](./images/13.png)
