@@ -52,8 +52,8 @@ Your layout should now look like this.
     └── webservers.yml
 ```
 
-![1](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/c2502a88-71a0-4d7e-a8d1-ba1595c0cac3)
-![2](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/513651c2-fbf7-489c-8fc1-606a8637fb75)
+![1](https://github.com/<github-user-name>/DevOps_Projects/assets/78992096/c2502a88-71a0-4d7e-a8d1-ba1595c0cac3)
+![2](https://github.com/<github-user-name>/DevOps_Projects/assets/78992096/513651c2-fbf7-489c-8fc1-606a8637fb75)
 
 + Now paste the instruction below into the `env-vars.yml` file.
 

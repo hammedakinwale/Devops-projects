@@ -172,7 +172,7 @@ ansible-playbook -i inventory/dev.yml playbooks/site.yaml
 - name: clone a repo
   become: true
   ansible.builtin.git:
-    repo: https://github.com/Tonybesto/tooling.git
+    repo: https://github.com/<your0git-hub-user-name>/tooling.git
     dest: /var/www/html
     force: yes
 

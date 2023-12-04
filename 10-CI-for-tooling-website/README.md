@@ -10,32 +10,34 @@
 
 ![it should look like this](./images/2.PNG)
 
-2. Install JDK (since Jenkins is a Java-based application)
+2. Install Jenkins
 
 ```
-sudo apt update
-sudo apt install openjdk-11-jre
-#Confirm Java installation
-java -version
-```
-
-3. Install Jenkins
-
-```
-curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
-  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+#!/bin/bash
+# jenkins installation script
+# update the server repository
+sudo apt update -y
+# This is the Debian package repository of Jenkins to automate installation and upgrade. To use this repository, first add the key to your system:
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+# Then add a Jenkins apt repository entry:
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
-sudo apt-get update
-sudo apt-get install -y jenkins
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+# Update your local package index, then finally install Jenkins:
+sudo apt-get update -y
+sudo apt-get install fontconfig openjdk-11-jre -y
+sudo apt-get install jenkins -y
+echo "Jenkins installation successfull"
+# Unlock Jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-4. By default Jenkins server uses TCP port 8080 - open it by creating a new Inbound Rule in your EC2 Security Group
+3. By default Jenkins server uses TCP port 8080 - open it by creating a new Inbound Rule in your EC2 Security Group
 
 ![it should look like this](./images/3.PNG)
 
-5. Perform initial Jenkins setup.
+4. Perform initial Jenkins setup.
 
 From your browser access http://<Jenkins-Server-Public-IP-Address-or-Public-DNS-Name>:8080
 

@@ -1,0 +1,40 @@
+/dev/mapper/webdata--vg-apps--lv: UUID=e75d7825-bf52-4e4b-8f9c-1a159cd1e623 /var/www/html ext4 defaults,nofail 0 0
+
+/dev/mapper/webdata--vg-logs--lv: UUID=85de944f-c157-4a0f-81fc-cb63271e28f8
+
+sudo mysql
+CREATE DATABASE wordpress;
+CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';
+GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+exit
+
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+sudo yum module list php
+sudo yum module reset php
+sudo yum module enable php:remi-7.4
+sudo yum install php php-opcache php-gd php-curl php-mysqlnd
+sudo systemctl start php-fpm
+sudo systemctl enable php-fpm
+setsebool -P httpd_execmem 1
+
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
+UUID=287d9c0b-0e0f-4e92-8534-45733aa3dc68
+
+/mnt/apps /mnt/logs /mnt/opt
+
+
+cd /home/ubuntu/ansible-config-mgt
+
+ansible-playbook -i /inventory/uat.yml playbooks/site.yaml
+
+
+keys
+
+access: AKIASVO6ZHL4KXWC5P6N
+
+private: ATIo9NGoedOkjrq5Dblnn7Tk2AVRegbxIUFYGfd/
