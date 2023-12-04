@@ -1,6 +1,6 @@
-#Understanding the wholistic CI inplementation with modern tools
+# Understanding the wholistic CI inplementation with modern tools
 
-# Experience Continuous Integration with Jenkins | Ansible | Artifactory | SonarQube | PHP
+### Experience Continuous Integration with Jenkins | Ansible | Artifactory | SonarQube | PHP
 
 **IMPORTANT NOTICE** This project has some initial theoretical concepts that must be well understood before moving
 on to the practical part. Please read it carefully as many times as needed to completely digest the most important and fundamental DevOps concepts. To successfully implement this project, it is crucial to grasp the importance of the entire `CI/CD` process, roles of each tool and success metrics-so we encourage you to thoroughly study the following theory until you feel comfortable explaining all the concepts (e.g., to your new junior colleague or during a job interview).
