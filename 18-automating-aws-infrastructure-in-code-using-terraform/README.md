@@ -12,7 +12,7 @@
 
 For easier authentication configuration - use `AWS CLI` with `aws configure` command.
 
-+ Create an `S3 bucket` to store Terraform state file. You can name it something like `<yourname>-dev-terraform-bucket` (Note: S3 bucket names must be unique unique within a region partition). We will use this bucket from Project-17 onwards.
++ Create an `S3 bucket` to store Terraform state file. You can name it something like `<yourname>-dev-terraform-bucket` (Note: S3 bucket names must be unique unique within a region partition). We will use this bucket from Project-19 onwards.
 
 ![the solution](./images/1.png)
 ![the solution](./images/2.png)
