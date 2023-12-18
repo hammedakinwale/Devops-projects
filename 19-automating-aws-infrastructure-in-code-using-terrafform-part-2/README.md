@@ -65,9 +65,47 @@ resource "aws_subnet" "private" {
 }
 ```
 
+![](./images/1.png)
+
+let's talk about Tagging a little bit more about 
+
+Tagging is a straightforward but very powerful concept that helps you manage your resources more efficiently:
+
++ Resources are better organized in 'virtual' groups.
++ They can be easily filtered and searched from console or programmatically.
++ Billing team can easily generate reports and determine how much each part of infrastructure costs.(by department, by type, by environment, etc.)
++ You can easily determine resources that are not being used and take actions accordingly.
++ If there are different teams in the organisation using the same account, tagging can help differentiate who owns what resources.
+
+**Note:** You can add multiple tags as a default set, for example:
+
+```
+tags = {
+  Environment      = "production" 
+  Owner-Email     = "infradev-segun@darey.io"
+  Managed-By      = "Terraform"
+  Billing-Account = "1234567890"
+}
+```
+
+Now you can tag all your resources using the format below
+
+```
+tags = merge(
+    var.tags,
+    {
+      Name = "Name of the resource"
+    },
+  )
+```
+
+The great thing about this is; anytime we need to make a change to the tags, we simply do that in one single place.
+
+But, our key-value pairs are hard coded. So, go ahead and work out a fix for that. Simply create variables for each value and use `var.variable_name` as the val
+
 ## **STEP 2:** Creating Internet Gateway
 
-+ Create a file called `internet_gateway.tf` and entering the following codes:
++ Create a file called `internet_gateway.tf` and insert the following codes:
 
 ```
 resource "aws_internet_gateway" "ig" {
@@ -81,6 +119,8 @@ resource "aws_internet_gateway" "ig" {
 
 }
 ```
+
+![](./images/2.png)
 
 ## **STEP 3:** Creating NAT Gateway
 
@@ -112,6 +152,8 @@ resource "aws_nat_gateway" "nat" {
   )
 }
 ```
+
+![](./images/3.png)
 
 ## **STEP 4:** Creating Routes
 
@@ -163,6 +205,7 @@ resource "aws_route_table_association" "public-subnets-assoc" {
   route_table_id = aws_route_table.public-rtb.id
 }
 ```
+![](./images/4.png)
 
 ## **STEP 5:** Creating IAM Roles
 
@@ -242,6 +285,8 @@ resource "aws_iam_instance_profile" "ip" {
   role = aws_iam_role.ec2_instance_role.name
 }
 ```
+
+![](./images/8.png)
 
 ## **STEP 6:** Creating Security Groups
 
@@ -473,6 +518,8 @@ resource "aws_security_group_rule" "inbound-mysql-webserver" {
 }
 ```
 
+![](./images/7.png)
+
 ## **STEP 7:** Creating Certificate From Amazon Certificate Manager
 
 + Create a new file called `cert.tf` and enter the following codes to create and validate a certificate AWS:
@@ -480,22 +527,22 @@ resource "aws_security_group_rule" "inbound-mysql-webserver" {
 ```
 # The entire section create a certiface, public zone, and validate the certificate using DNS method
 
-# Create the certificate using a wildcard for all the domains created in mytoolz
-resource "aws_acm_certificate" "mytoolz" {
-  domain_name       = "*.mytoolz.tk"
+# Create the certificate using a wildcard for all the domains created in depps
+resource "aws_acm_certificate" "depps" {
+  domain_name       = "*.depps.site"
   validation_method = "DNS"
 }
 
 # calling the hosted zone
-data "aws_route53_zone" "mytoolz" {
-  name         = "mytoolz.tk"
+data "aws_route53_zone" "depps" {
+  name         = "depps.site"
   private_zone = false
 }
 
 # selecting validation method
-resource "aws_route53_record" "mytoolz" {
+resource "aws_route53_record" "depps" {
   for_each = {
-    for dvo in aws_acm_certificate.mytoolz.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.depps.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
@@ -507,19 +554,19 @@ resource "aws_route53_record" "mytoolz" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = data.aws_route53_zone.mytoolz.zone_id
+  zone_id         = data.aws_route53_zone.depps.zone_id
 }
 
 # validate the certificate through DNS method
-resource "aws_acm_certificate_validation" "mytoolz" {
-  certificate_arn         = aws_acm_certificate.mytoolz.arn
-  validation_record_fqdns = [for record in aws_route53_record.mytoolz : record.fqdn]
+resource "aws_acm_certificate_validation" "depps" {
+  certificate_arn         = aws_acm_certificate.depps.arn
+  validation_record_fqdns = [for record in aws_route53_record.depps : record.fqdn]
 }
 
 # create records for tooling
 resource "aws_route53_record" "tooling" {
-  zone_id = data.aws_route53_zone.mytoolz.zone_id
-  name    = "tooling.mytoolz.tk"
+  zone_id = data.aws_route53_zone.depps.zone_id
+  name    = "tooling.depps.site"
   type    = "A"
 
   alias {
@@ -531,8 +578,8 @@ resource "aws_route53_record" "tooling" {
 
 # create records for wordpress
 resource "aws_route53_record" "wordpress" {
-  zone_id = data.aws_route53_zone.mytoolz.zone_id
-  name    = "wordpress.mytoolz.tk"
+  zone_id = data.aws_route53_zone.depps.zone_id
+  name    = "wordpress.depps.site"
   type    = "A"
 
   alias {
@@ -542,6 +589,7 @@ resource "aws_route53_record" "wordpress" {
   }
 }
 ```
+![](./images/5.png)
 
 ## **STEP 8:** Creating Application Load Balancer and Target Groups
 
@@ -709,11 +757,13 @@ resource "aws_lb_listener_rule" "tooling-listener" {
 
   condition {
     host_header {
-      values = ["tooling.mytoolz.tk"]
+      values = ["tooling.depps.site"]
     }
   }
 }
 ```
+
+![](./images/6.png)
 
 ## **STEP 9:** Creating An Auto Scaling Group
 
@@ -723,13 +773,13 @@ resource "aws_lb_listener_rule" "tooling-listener" {
 
 ```
 #### creating sns topic for all the auto scaling groups
-resource "aws_sns_topic" "tony-sns" {
+resource "aws_sns_topic" "hammed-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
 # creating notification for all the auto scaling groups
 
-resource "aws_autoscaling_notification" "tony_notifications" {
+resource "aws_autoscaling_notification" "hammed_notifications" {
   group_names = [
     aws_autoscaling_group.bastion-asg.name,
     aws_autoscaling_group.nginx-asg.name,
@@ -743,7 +793,7 @@ resource "aws_autoscaling_notification" "tony_notifications" {
     "autoscaling:EC2_INSTANCE_TERMINATE_ERROR",
   ]
 
-  topic_arn = aws_sns_topic.tony-sns.arn
+  topic_arn = aws_sns_topic.hammed-sns.arn
 }
 
 resource "random_shuffle" "az_list" {
@@ -1042,7 +1092,7 @@ cd ~
 sudo yum install -y nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
-sudo git clone https://github.com/Tonybesto/TCS-Project-Configuration.git
+sudo git clone https://github.com/hammedakinwale/TCS-Project-Configuration.git
 sudo cp RCR-Project-Configuration/reverseProxy.conf /etc/nginx/
 sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf-distro
 cd /etc/nginx/
@@ -1096,7 +1146,7 @@ yum module enable php:remi-7.4 -y
 yum install -y php php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd php-fpm php-json
 systemctl start php-fpm
 systemctl enable php-fpm
-git clone https://github.com/Tonybesto/tooling.git
+git clone https://github.com/hammedakinwale/tooling.git
 mkdir /var/www/html
 cp -R /tooling/html/*  /var/www/html/
 cd /tooling
@@ -1107,6 +1157,8 @@ sed -i "s/$db = mysqli_connect('172.31.32.49', 'webaccess', 'password', 'tooling
 chcon -t httpd_sys_rw_content_t /var/www/html/ -R
 systemctl restart httpd
 ```
+
+![](./images/9.png)
 
 ## **STEP 10:** Creating Database And EFS Resources
 
@@ -1246,5 +1298,7 @@ resource "aws_db_instance" "TCS-rds" {
   multi_az               = "true"
 }
 ```
+
+![](./images/10.png)
 
 # THEN EXECUTE `TERRAFFORM PLAN` AND `APPLY`

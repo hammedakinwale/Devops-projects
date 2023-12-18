@@ -1,4 +1,4 @@
-# AUTOMATING AWS INFRASTURCTURE IN CODE (TERRAFORM)
+# Automate Infrastructure With IaC using Terraform Part 1
 
 ### Prerequisites before you begin writing Terraform code
 
