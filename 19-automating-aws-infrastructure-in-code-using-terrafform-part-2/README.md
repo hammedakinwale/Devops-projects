@@ -1,5 +1,7 @@
 # INFRASTRUCTURE AUTOMATION WITH IAC USING TERRAFORM
 
+[you can find the configurations to this project](https://github.com/hammedakinwale/HCS-Terraform)
+
 [Link To Code Implementation(TCS-Terraform)](https://github.com/hammedakinwale/TCS-Terraform)
 
 ### Understanding Basic Network Concepts
