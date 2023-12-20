@@ -51,4 +51,4 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 The implementation of terraform modularization for this project can be found in this repository:
 
-[TCS-Modular-Terraform-code-repo](https://github.com/hammedakinwale/TCS-Modular-Terraform-Architecture)
+[HCS-Modular-Terraform-code-repo](https://github.com/hammedakinwale/HCS-Modular-Terraform-Architecture)
