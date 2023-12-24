@@ -120,7 +120,7 @@ Inside `roles` directory create your new MySQL role with `ansible-galaxy install
 
 `mv geerlingguy.apache/ apacheRole`
 
-![3](https://github.com/Micah-Shallom/DevOps_Projects/assets/78992096/b47438b5-ae5a-4f5d-b7b1-050ff3a0e25b)
+![3](https://github.com/hammedakinwale/DevOps_Projects/assets/78992096/b47438b5-ae5a-4f5d-b7b1-050ff3a0e25b)
 
 # LOAD BALANCER ROLES
 
