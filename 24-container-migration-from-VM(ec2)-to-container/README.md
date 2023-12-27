@@ -21,6 +21,11 @@ First, we need to install Docker Engine, which is a client-server application th
 + A command-line interface (CLI) client docker.
 You can learn how to install Docker Engine on your PC [here](https://docs.docker.com/engine/install/)
 
+```
+      ¯\_(ﭣ)_/¯
+ IT WORKS ON MY MACHINE
+```
+
 ### MySQL in container
 
 Let us start assembling our application from the Database layer – we will use a pre-built MySQL database container, configure it, and make sure it is ready to receive requests from our PHP application.
