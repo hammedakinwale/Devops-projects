@@ -216,7 +216,7 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 
 For instructions on installations of the dependencies use the link below:
 
-[here](https://github.com/Tonybesto/ansible-config/blob/main/README.md)
+[here](https://github.com/hammedakinwale/ansible-config-mgt/main/README.md)
 
 1. Installing Ansible on Jenkins
 
