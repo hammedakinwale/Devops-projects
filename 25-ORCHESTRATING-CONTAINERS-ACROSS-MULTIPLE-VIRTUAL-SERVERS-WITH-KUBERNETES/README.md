@@ -1147,6 +1147,8 @@ Kubernetes uses a 32-byte (256-bit) encryption key for etcd encryption. Etcd is 
 
 `$ ETCD_ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)`
 
+`echo $ETCD_ENCRYPTION_KEY`
+
 See the output below:
 
 ![alt text](./images/44.png)
@@ -1834,8 +1836,7 @@ Kubernetes uses CNI as an interface between network providers and Kubernetes Pod
 Download the plugins available from [containernetworking’s](https://github.com/containernetworking/cni) GitHub repo and read more about CNIs and why it is being developed.
 
 ```
-wget -q --show-progress --https-only --timestamping \
-  https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
+wget https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
 ```
 
 Install CNI into /opt/cni/bin/
@@ -2091,3 +2092,33 @@ Check status of the service
 `$ sudo systemctl status containerd`
 
 ![alt text](./images/59.png)
+
+<!-- {
+  for i in 0 1 2; do
+    instance="manual-k8s-cluster-worker-${i}"
+    external_ip=$(aws ec2 describe-instances \
+      --filters "Name=tag:Name,Values=${instance}" \
+      --output text --query 'Reservations[].Instances[].PublicIpAddress')
+    scp -i ssh/manual-k8s-cluster.id_rsa \
+      manual-k8s-cluster-worker-0.kubeconfig ${instance}-key.pem ${instance}.pem ubuntu@${external_ip}:~/; \
+  done
+
+
+  for i in 0 1 2; do
+    instance="manual-k8s-cluster-worker-${i}"
+    external_ip=$(aws ec2 describe-instances \
+      --filters "Name=tag:Name,Values=${instance}" \
+      --output text --query 'Reservations[].Instances[].PublicIpAddress')
+    scp -i ssh/manual-k8s-cluster.id_rsa \
+      manual-k8s-cluster-worker-1.kubeconfig ${instance}-key.pem ${instance}.pem ubuntu@${external_ip}:~/; \
+  done
+
+  for i in 0 1 2; do
+    instance="manual-k8s-cluster-worker-${i}"
+    external_ip=$(aws ec2 describe-instances \
+      --filters "Name=tag:Name,Values=${instance}" \
+      --output text --query 'Reservations[].Instances[].PublicIpAddress')
+    scp -i ssh/manual-k8s-cluster.id_rsa \
+      manual-k8s-cluster-worker-2.kubeconfig ${instance}-key.pem ${instance}.pem ubuntu@${external_ip}:~/; \
+  done
+} -->
