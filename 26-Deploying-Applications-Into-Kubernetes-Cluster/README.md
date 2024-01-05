@@ -628,3 +628,6 @@ you can resolve that by upgrading awscli to latest version with:
 you can destroy the entire cluster with command below:
 
 `eksctl delete cluster <the-cluster-name> --region us-east-1`
+
+
+THANK YOU
