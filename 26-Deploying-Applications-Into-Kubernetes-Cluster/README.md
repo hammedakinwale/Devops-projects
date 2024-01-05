@@ -104,13 +104,13 @@ Install __pip__
 
 `$ sudo apt install python3-pip`
 
-![](./images/8.PNG)
+![8](https://github.com/hammedakinwale/Devops-projects/assets/78992096/59be1ebf-0213-4719-b95a-3b962ea1ae65)
 
 and then Upgrade the __awscli__
 
 `$ pip install --upgrade awscli`
 
-![](./images/9.PNG)
+![9](https://github.com/hammedakinwale/Devops-projects/assets/78992096/96fc39ff-69d8-4c15-b97f-f3aa830ac005)
 
 To verify run any aws command
 
@@ -142,7 +142,7 @@ Verify
 
 `$ kubectl version --client`
 
-![](./images/10.PNG)
+![10](https://github.com/hammedakinwale/Devops-projects/assets/78992096/e539ac62-d673-451d-9afe-f904b56fbcd7)
 
 Now, you have eksctl installed on your Windows system through WSL. You can use it to interact with Amazon EKS clusters.
 
@@ -155,7 +155,7 @@ $ eksctl create cluster \
   --nodes 2
 ```
 
-![](./images/11.PNG)
+![11](https://github.com/hammedakinwale/Devops-projects/assets/78992096/2efc510e-1608-4280-aab5-a14b392342b7)
 
 Configure kubectl
 
@@ -167,8 +167,8 @@ Then run these to get nodes
 
 `$ kubectl get nodes`
 
-![](./images/13.PNG)
-![](./images/12.PNG)
+![13](https://github.com/hammedakinwale/Devops-projects/assets/78992096/c48611ec-2f70-4127-8542-fc55c49b5fd0)
+![12](https://github.com/hammedakinwale/Devops-projects/assets/78992096/46c9203d-9a13-4cd1-a321-21ff83a2e6f4)
 
 Creating A Pod For The Nginx Application
 
@@ -202,8 +202,8 @@ access the information about the pod with below script
 
 `$ kubectl describe pod nginx-pod.yml`
 
-![](./images/14.PNG)
-![](./images/15.PNG)
+![14](https://github.com/hammedakinwale/Devops-projects/assets/78992096/4dccae28-67dc-40a5-a217-39d04e6521cf)
+![15](https://github.com/hammedakinwale/Devops-projects/assets/78992096/8af41276-4a81-444d-9f23-2ee46234322e)
 
 ACCESSING THE APP FROM THE BROWSER
 
@@ -217,7 +217,7 @@ In essence, a Service acts as a gateway that accepts incoming requests on behalf
 
 `$ kubectl get pod nginx-pod -o wide`
 
-![](./images/16.PNG)
+![16](https://github.com/hammedakinwale/Devops-projects/assets/78992096/0bef87f7-2a17-4a87-9b8b-d9fd7c9f5868)
 
 __Expose a Service on a server’s public IP address & static port__
 
@@ -254,14 +254,14 @@ To access the information about the service
 
 `$ kubectl describe svc nginx-svc.yml`
 
-![](./images/17.PNG)
+![17](https://github.com/hammedakinwale/Devops-projects/assets/78992096/b2ab8971-3137-4db1-ad91-9d91a3fb98e5)
 
 To access the service,
 
 Allow the inbound traffic in your EC2’s Security Group to the NodePort range 30080
 
-![](./images/18.PNG)
-![](./images/19.PNG)
+![19](https://github.com/hammedakinwale/Devops-projects/assets/78992096/17a370d4-83ff-4465-a336-a82275f7a9ae)
+![18](https://github.com/hammedakinwale/Devops-projects/assets/78992096/2c06282f-7a80-42d1-a972-3b1df58f9b11)
 
 The port number 30080 designates the specific port associated with the node where the Pod is currently scheduled to operate. Should the Pod undergo rescheduling to a different node, it will retain this very port number on its new hosting node. Consequently, if you have multiple Pods concurrently running on diverse nodes, each of them will be accessible via their respective node IP addresses, all employing the same consistent port number.
 
@@ -277,7 +277,7 @@ CREATE A REPLICA SET
 
 Let us create a `rs.yml` manifest for a ReplicaSet object
 
-![](./images/20.PNG)
+![20](https://github.com/hammedakinwale/Devops-projects/assets/78992096/98cc91a2-8124-4eb9-82e8-39f4ac7587ff)
 
 The manifest file of ReplicaSet consist of the following fields
 
@@ -300,7 +300,7 @@ OR
 
 `$ kubectl get pod <pod-id> -o yaml`
 
-![](./images/21.PNG)
+![21](https://github.com/hammedakinwale/Devops-projects/assets/78992096/6d161bf8-417b-462f-bd77-d457c1ae4b34)
 
 Detailed information about the replicaset
 
@@ -310,13 +310,13 @@ OR
 
 `$ kubectl get rs nginx-rs -o json`
 
-![](./images/22.PNG)
+![22](https://github.com/hammedakinwale/Devops-projects/assets/78992096/762d859c-f0a3-44cf-accc-11fe3a50912f)
 
 We can easily scale our ReplicaSet by specifying the desired number of replicas
 
 `$ kubectl scale rs nginx-rs --replicas=<number-of-pods>`
 
-![](./images/23.PNG)
+![23](https://github.com/hammedakinwale/Devops-projects/assets/78992096/21bd5777-3bdc-45a7-b37c-73e853b7db0a)
 
 Advanced label matching
 
@@ -376,7 +376,7 @@ Get the replication set
 
 `$ kubectl get rs nginx-rs -o wide`
 
-![](./images/24.PNG)
+![24](https://github.com/hammedakinwale/Devops-projects/assets/78992096/65d7eba3-5de0-43ad-a642-21109e9bdf3f)
 
 USING AWS LOAD BALANCER TO ACCESS YOUR SERVICE IN KUBERNETES.
 
@@ -405,18 +405,18 @@ Create the nginxlb-svc.yml
 
 An ELB resource will be created in your AWS console
 
-![](./images/25.PNG)
+![25](https://github.com/hammedakinwale/Devops-projects/assets/78992096/c3cd7511-c773-42fa-b9ea-28f5f7c60574)
 
 A Kubernetes component in the control plane called Cloud-controller-manager is responsible for triggering this action. It connects to your specific cloud provider’s (AWS) APIs and create resources such as Load balancers. It will ensure that the resource is appropriately tagged
 
-![](./images/26.PNG)
+![26](https://github.com/hammedakinwale/Devops-projects/assets/78992096/351ede27-8112-44e3-a31a-6964cb3df9bf)
 
 To get the endpoint for the load balancer
 
 `$ kubectl get svc`
 
-![](./images/27.PNG)
-![](./images/28.PNG)
+![27](https://github.com/hammedakinwale/Devops-projects/assets/78992096/94e082c8-3607-4ea7-9f48-2d1b1aea76a5)
+![28](https://github.com/hammedakinwale/Devops-projects/assets/78992096/c8a1e847-b5c6-4291-9d4b-e7e613b5437b)
 
 To get information about the nginx-service
 
@@ -426,7 +426,7 @@ OR
 
 `$ kubectl get svc nginx-service -o yaml`
 
-![](./images/29.PNG)
+![29](https://github.com/hammedakinwale/Devops-projects/assets/78992096/3728300a-ab91-4357-a919-db7d3a9f53c4)
 
 A clusterIP key is updated in the manifest and assigned an IP address. Even though you have specified a Loadbalancer service type, internally it still requires a clusterIP to route the external traffic through. In the ports section, nodePort is still used. This is because Kubernetes still needs to use a dedicated port on the worker node to route the traffic through. Ensure that port range 30000-32767 is opened in your inbound Security Group configuration.
 
@@ -484,13 +484,13 @@ Get the pods
 
 `$ kubectl get pods`
 
-![](./images/30.PNG)
+![30](https://github.com/hammedakinwale/Devops-projects/assets/78992096/78a0d379-d7a2-4b5a-a03b-c6abf4969ae6)
 
 From the above we found out that two of the pods are pending. To get information about the pod
 
 `$ kubectl describe pod <pod-id>`
 
-![](./images/31.PNG)
+![31](https://github.com/hammedakinwale/Devops-projects/assets/78992096/0c585c49-5752-4e9d-8ffa-9e5bceaa9635)
 
 The Event will help us with the problem with the pods.
 
@@ -518,15 +518,15 @@ We can access the content of the default.conf
 
 `$ cat /etc/nginx/conf.d/default.conf`
 
-![](./images/32.PNG)
+![32](https://github.com/hammedakinwale/Devops-projects/assets/78992096/7e248ce7-2e38-4d5b-b5ab-3168ee711135)
 
 Create the nginxlb-svc.yml service and access the nginx from the browser using the loadbalancer endpoint.
 
-![](./images/33.PNG)
+![33](https://github.com/hammedakinwale/Devops-projects/assets/78992096/f62dcab7-3838-4f92-bdb3-136b7e7b9052)
 
 The set up looks like this
 
-![](./images/34.PNG)
+![34](https://github.com/hammedakinwale/Devops-projects/assets/78992096/c9db74e1-5614-4ac4-9e9f-a9499b5fd152)
 
 PERSISTING DATA FOR PODS
 
@@ -538,7 +538,7 @@ To see this in action, scale down the pods from 2 to 1
 
 `kubectl scale deployment nginx-deploy --replicas=1`
 
-![](./images/35.PNG)
+![35](https://github.com/hammedakinwale/Devops-projects/assets/78992096/8a295f1f-b793-4338-b49e-23afdbafed5f)
 
 Connect into the pod and install vim
 
@@ -546,7 +546,7 @@ Connect into the pod and install vim
 
 `# apt update && apt install vim -y`
 
-![](./images/36.PNG)
+![36](https://github.com/hammedakinwale/Devops-projects/assets/78992096/0e4798ae-cac4-4c9c-80d5-e57861f85b89)
 
 Update the content of the file and add the code below /usr/share/nginx/html/index.html
 
@@ -579,23 +579,23 @@ Start your Learning today at
 </html>
 ```
 
-![](./images/37.PNG)
+![37](https://github.com/hammedakinwale/Devops-projects/assets/78992096/dd1eebb3-319b-4968-8198-229a1598f331)
 
 Reload the browser to see the changes mad
 
-![](./images/38.PNG)
+![38](https://github.com/hammedakinwale/Devops-projects/assets/78992096/f2d6e847-020b-455f-9291-d813598d9c25)
 
 Now, delete only the running Pod
 
 `$ kubectl delete pod nginx-deploy-7d476d754d-wrgsn`
 
-![](./images/39.PNG)
+![39](https://github.com/hammedakinwale/Devops-projects/assets/78992096/759c31be-2d81-45a4-a493-d00df6347a89)
 
 We will see that the replicaset creates another pod with a different pod ID.
 
 Refresh the web page
 
-![](./images/40.PNG)
+![40](https://github.com/hammedakinwale/Devops-projects/assets/78992096/44547325-586b-4ed3-b60e-1b55f7e04383)
 
 You will see that the content that was saved in the container is no longer there. That is because Pods do not store data when they are being recreated – that is why they are called ephemeral or stateless.
 
