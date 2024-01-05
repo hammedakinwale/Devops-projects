@@ -62,13 +62,13 @@ Run the following to enable WSL
 
 `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
 
-![](./images/2.PNG)
+![2](https://github.com/hammedakinwale/Devops-projects/assets/78992096/99967cbf-d68a-4288-9f12-da696531b93a)
 
 Reboot your system.
 
 After the reboot, open the Microsoft Store, search for your preferred Linux distribution (e.g., Ubuntu), and install it.
 
-![](./images/3.PNG)
+![3](https://github.com/hammedakinwale/Devops-projects/assets/78992096/2e2df276-d244-41af-adce-b40943f84218)
 
 Complete the initial setup of the Linux distribution by creating a user and password.
 
@@ -76,14 +76,13 @@ Update the ubuntu packages On the WSL
 
 `$ sudo apt update && sudo pat upgrade`
 
-![](./images/4.PNG)
+![4](https://github.com/hammedakinwale/Devops-projects/assets/78992096/6d9bbaa2-72e5-44a9-a1a6-def68c29672b)
 
 Install the AWS CLI tool
 
 `sudo apt install awscli`
 
-![](./images/5.PNG)
-
+![5](https://github.com/hammedakinwale/Devops-projects/assets/78992096/c9146093-a770-4511-af38-05e8c90b01c9)
 
 Download and install eksctl
 
@@ -98,8 +97,8 @@ For the WSL to interact with the AWS we need to install awscli and configure it
 `$ sudo apt install awscli`
 
 `aws configure`
-
-![](./images/7.PNG)
+![6](https://github.com/hammedakinwale/Devops-projects/assets/78992096/238ae578-34da-41a5-834c-d9331d43957b)
+![7](https://github.com/hammedakinwale/Devops-projects/assets/78992096/b1ecef8f-7a6d-4b1a-97d4-cb0131236f57)
 
 Install __pip__
 
