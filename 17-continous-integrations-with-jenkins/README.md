@@ -29,6 +29,11 @@ Todo webserver: To host the Todo web application.
 Ansible Inventory should look like this
 
 ```
+
+![the view](.//images/23.png)
+
+Connect to vscode
+
 ├── ci
 ├── dev
 ├── pentest

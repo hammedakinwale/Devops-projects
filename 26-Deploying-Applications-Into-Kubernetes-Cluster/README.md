@@ -470,7 +470,7 @@ spec:
 
 Create the deployment
 
-`$ kubectl apply -f deploy.yaml`
+`$ kubectl apply -f deploy.yml`
 
 Get the deployment
 
