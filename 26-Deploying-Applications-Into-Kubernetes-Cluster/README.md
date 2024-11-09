@@ -1,5 +1,7 @@
 # Deploying Applications Into Kubernetes Cluster
 
+## NOTE: you might notice i use WE alot that's me assuming my self working with a team!
+
 In this project, we will initiate the deployment of applications within a Kubernetes (K8s) cluster. Kubernetes is a complex system with numerous components, working with multiple layers of abstraction that separate your application from the underlying host machines where it is executed.
 
 we will explore and witness the following aspects in action:
