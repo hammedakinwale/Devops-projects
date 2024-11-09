@@ -1,4 +1,4 @@
-# MIGRATING TO THE СLOUD WITH CONTAINERIZATION. PART 1 - DOCKER & DOCKER COMPOSE
+# MIGRATING FROM EC2 INSTANCE TO DOCKER CONTAINER. - DOCKER & DOCKER COMPOSE
 
 Before now I have been using Ec2 instance to install and deploy softwares. While this is easy and fast, it has its own challenges. Consider we have the requirement into two set of softwares with both needing different version of a dependency say java. This will lead to conflict. In software speaks it is called dependency matrix.
 
