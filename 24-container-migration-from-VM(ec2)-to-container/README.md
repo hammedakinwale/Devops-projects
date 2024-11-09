@@ -1,14 +1,14 @@
 # MIGRATING TO THE СLOUD WITH CONTAINERIZATION. PART 1 - DOCKER & DOCKER COMPOSE
 
-Until now we have been using Ec2 instance to install and deploy our softwares. While this is easy and fast, it has its own challenges. Consider that you have the requirement into two set of softwares with both needing different version of a dependency say java. This will lead to conflict. In software speaks it is called dependency matrix.
+Before now I have been using Ec2 instance to install and deploy softwares. While this is easy and fast, it has its own challenges. Consider we have the requirement into two set of softwares with both needing different version of a dependency say java. This will lead to conflict. In software speaks it is called dependency matrix.
 
 Another problem encountered in software development is the problem of IT WORKS ON MY COMPUTER . This problem arises from the configuration drift between the developers computer and the testers computer.
 
 All the problem highlighted above is solved by containerization. Container solves this problem by creating an isolated environmentment using Linux features like NAMESPACE and CGROUP for a process.
 
-+ Containers are used to package application code, app configuration, dependencies and runtime environment required for running an application. This garanties to a large extent that the application runs efficiently and predictably on any environment it is deployed provider it has a container runtime.
++ Containers are used to package application code, app configuration, dependencies and runtime environment required for running an application. This guaranties to a large extent that the application runs efficiently and predictably on any environment it is deployed provider it has a container runtime.
 
-+ In this project, we will learn how to solve this problem and practice the technology that revolutionized application distribution and deployment back in 2013! We are talking of Containers and imply Docker. Even though there are other application containerization technologies, Docker is the standard and the default choice for shipping your app in a container!
++ In this project, I learn't how to solve this problem and practice the technology that revolutionized application distribution and deployment back in 2013! Even though there are other application containerization technologies, Docker is the standard and the default choice for shipping your app in a container!
 
 ## Install Docker and prepare for migration to the Cloud
 
@@ -32,13 +32,13 @@ Let us start assembling our application from the Database layer – we will use 
 
 ### **Step 1:** Pull MySQL Docker Image from Docker Hub Registry
 
-Start by pulling the appropriate Docker image for MySQL. You can download a specific version or opt for the latest release, as seen in the following command:
+Start by pulling the appropriate Docker image for MySQL. You can download a specific version or opt for the latest release, as seen in the below command:
 
 `docker pull mysql/mysql-server:latest`
 
 ![](./images/1.png)
 
-If you are interested in a particular version of MySQL, replace latest with the version number. Visit Docker Hub to check other tags here
+If you are interested in a particular version of MySQL, replace latest with the version number. Visit Docker Hub to check other tags [here](https://hub.docker.com/_/mysql)
 
 List the images to check that you have downloaded them successfully:
 
