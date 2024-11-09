@@ -1,14 +1,16 @@
 # Automate Infrastructure With IaC using Terraform – Terraform Cloud
 
+## NOTE: you might notice i use WE alot that's me assuming my self working with a team!
+
 ### What Terraform Cloud is and why use it
 
-[In previous project](https://github.com/hammedakinwale/Devops-projects/tree/main/22-automating-aws-infrastructure-in-code-using-terrafform-part-3) project, we refactored our terraform codes into modules and as a result the introduction of modules into our codebase helped save time and reduce costly errors by re-using configuration written either by yourself, other members of your team, or other Terraform practitioners who have published modules for you to use.
+[In previous project](https://github.com/hammedakinwale/Devops-projects/tree/main/22-automating-aws-infrastructure-in-code-using-terrafform-part-3) project, I refactored My terraform codes into modules and as a result the introduction of modules into a codebase helped save time and reduce costly errors by re-using configuration written either by yourself, other members of your team, or other Terraform practitioners who have published modules for you to use.
 
 We require AMIs that are preconfigured with necessary packages for our applications to run on specific servers.
 
 ![alt text](./images/1.png)
 
-In this project, we will be introducing two new concepts
+In this project, I will be introducing two new concepts
 
 + Packer
 + Terraform Cloud
@@ -19,7 +21,7 @@ Packer is an open source tool for creating identical machine images for multiple
 
 **Step 1. Creating Bastion, Nginx, Tooling and Wordpress AMIs**
 
-We write packer code which helps us create AMIs for each of the following mentioned servers. A sample of the code can be found here: [packer code setup](https://gitlab.com/devops-projects2853448/packer-iac-ami)
+We will write packer code which helps us create AMIs for each of the following mentioned servers. A sample of the code can be found here: [packer code setup](https://gitlab.com/devops-projects2853448/packer-iac-ami)
 
 For each of the following `.pkr.hcl` files, we run the following commands
 
