@@ -1,5 +1,7 @@
 # MIGRATING FROM EC2 INSTANCE TO DOCKER CONTAINER. - DOCKER & DOCKER COMPOSE
 
+## NOTE: you might notice i use WE alot that's me assuming my self working with a team!
+
 Before now I have been using Ec2 instance to install and deploy softwares. While this is easy and fast, it has its own challenges. Consider we have the requirement into two set of softwares with both needing different version of a dependency say java. This will lead to conflict. In software speaks it is called dependency matrix.
 
 Another problem encountered in software development is the problem of IT WORKS ON MY COMPUTER . This problem arises from the configuration drift between the developers computer and the testers computer.
