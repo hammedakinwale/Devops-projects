@@ -162,7 +162,7 @@ Client Version: version.Info{Major:"1", Minor:"20+", GitVersion:"v1.20.4-dirty",
 
 **Install CFSSL and CFSSLJSON**
 
-`cfssl` is an open source tool by **Cloudflare used** to setup a **Public Key Infrastructure** [(PKI Infrastructure)](https://en.wikipedia.org/wiki/Public_key_infrastructure) for generating, signing and bundling TLS certificates. In previous projects you have experienced the use of **Letsencrypt** for the similar use case. Here, `cfssl` will be configured as a Certificate Authority which will issue the certificates required to spin up a Kubernetes cluster.
+`cfssl` is an open source tool by **Cloudflare used** to setup a **Public Key Infrastructure** [(PKI Infrastructure)](https://en.wikipedia.org/wiki/Public_key_infrastructure) for generating, signing and bundling TLS certificates. In previous projects i experienced the use of **Letsencrypt** for the similar use case. Here, `cfssl` will be configured as a Certificate Authority which will issue the certificates required to spin up a Kubernetes cluster.
 Download, install and verify successful installation of `cfssl` and `cfssljson`:
 
 **Mac OS X**
