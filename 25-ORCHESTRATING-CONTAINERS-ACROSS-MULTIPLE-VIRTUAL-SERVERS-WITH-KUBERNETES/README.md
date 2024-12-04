@@ -36,8 +36,6 @@ In transit encryption means encrypting communications over the network using HTT
 
 Let us begin building out Kubernetes cluster from the ground
 
-**DISCLAIMER:** The following setup of Kubernetes should be used for learning purpose only, and not to be considered for production. This is because setting up a K8s cluster for production use has a lot more moving parts, especially when it comes to planning the nodes, and securing the cluster. The purpose of "K8s From-Ground-Up" is to get you much closer to the different components as shown in the architecture diagram and relate with what you have been learning about Kubernetes.
-
 ## Tools to be used and expected result of the Project 20
 
 + VM: AWS EC2
