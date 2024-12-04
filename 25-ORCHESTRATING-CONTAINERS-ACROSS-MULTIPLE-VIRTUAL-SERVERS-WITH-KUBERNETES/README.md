@@ -36,7 +36,7 @@ In transit encryption means encrypting communications over the network using HTT
 
 Let us begin building out Kubernetes cluster from the ground
 
-## Tools to be used and expected result of the Project 20
+## Tools to be used and expected result of the Project
 
 + VM: AWS EC2
 + OS: Ubuntu 20.04 lts+
