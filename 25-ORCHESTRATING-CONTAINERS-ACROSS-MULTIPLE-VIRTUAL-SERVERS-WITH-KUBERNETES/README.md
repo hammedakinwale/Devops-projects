@@ -45,7 +45,7 @@ Let us begin building out Kubernetes cluster from the ground
 + cfssl and cfssljson utilities
 + Kubernetes cluster
 
-## You will create 3 EC2 Instances, and in the end, we will have the following parts of the cluster properly configured:
+## WE will create 3 EC2 Instances, and in the end, we will have the following parts of the cluster properly configured:
 
 + One Kubernetes Master
 + Two Kubernetes Worker Nodes
